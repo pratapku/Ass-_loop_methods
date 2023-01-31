@@ -4,14 +4,17 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
 from django import forms
-from .models import MyUser,Category,Product,Sub_category,contect_us
+from .models import MyUser,Category,Product,Sub_category,contect_us,Post,comment
+from import_export.admin import ImportExportModelAdmin
+class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
+     list_display = []
+admin.site.register(Category,BlogAdmin)
+admin.site.register(Product,BlogAdmin)
+admin.site.register(Sub_category,BlogAdmin)
+admin.site.register(contect_us,BlogAdmin)
+admin.site.register(Post,BlogAdmin)
+admin.site.register(comment,BlogAdmin)
 
-admin.site.register(Category)
-
-
-admin.site.register(Product)
-admin.site.register(Sub_category)
-admin.site.register(contect_us)
 
 
 

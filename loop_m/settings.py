@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'rest_framework',
     'crispy_forms',
+    'import_export',
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
