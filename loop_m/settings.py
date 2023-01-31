@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'import_export',
 ]
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 AUTH_PASSWORD_VALIDATORS = [
     {

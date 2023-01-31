@@ -7,7 +7,7 @@ from django import forms
 from .models import MyUser,Category,Product,Sub_category,contect_us,Post,comment
 from import_export.admin import ImportExportModelAdmin
 class BlogAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-     list_display = []
+     pass
 admin.site.register(Category,BlogAdmin)
 admin.site.register(Product,BlogAdmin)
 admin.site.register(Sub_category,BlogAdmin)
