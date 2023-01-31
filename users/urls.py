@@ -25,7 +25,7 @@ from .import views
 urlpatterns = [
     path('',views.index,name="index"),
     path('threads/',views.threads,name="threads"),
-
+    path('exportcsv/', views.exportcsv),
     path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
     path('post/',PostListView.as_view(),name='post-list'),
     path('logout/',views.logout_view,name='logout_page'),

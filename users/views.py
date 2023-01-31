@@ -31,7 +31,24 @@ from rest_framework.views import APIView
 # from .utils import get_tokens_for_user
 from .serializers import RegistrationSerializer, PasswordChangeSerializer
 # Create your views here.
+import csv
 
+# Create your views here.
+
+import csv
+
+# Create your views here.
+
+def exportcsv(request):
+    students = Product.objects.all()
+    response = HttpResponse('text/csv')
+    response['Content-Disposition'] = 'attachment; filename=students.csv'
+    writer = csv.writer(response)
+    writer.writerow(['ID', 'RollNo', 'Class', 'First Name', 'Last Name'])
+    studs = students.values_list('id','image', 'name', 'price', 'date')
+    for std in studs:
+        writer.writerow(std)
+    return response
 def threads(request):
     return render(request,'threads.html')
 class RegistrationView(APIView):
