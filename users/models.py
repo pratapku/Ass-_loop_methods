@@ -133,10 +133,3 @@ class contect_us(models.Model):
     message=models.TextField(max_length =1000)
     def __str__(self):
         return self.name
-class Student(models.Model):   
-    roll = models.CharField(max_length=100)
-    sclass = models.CharField(max_length=100)
-    fname = models.CharField(max_length=100)
-    lname = models.CharField(max_length=100)
-    class Meta:
-        db_table = "students"

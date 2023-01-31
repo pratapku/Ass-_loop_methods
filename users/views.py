@@ -44,7 +44,7 @@ def exportcsv(request):
     response = HttpResponse('text/csv')
     response['Content-Disposition'] = 'attachment; filename=students.csv'
     writer = csv.writer(response)
-    writer.writerow(['ID', 'RollNo', 'Class', 'First Name', 'Last Name'])
+    writer.writerow(['ID', 'image', 'name', 'price', 'date'])
     studs = students.values_list('id','image', 'name', 'price', 'date')
     for std in studs:
         writer.writerow(std)
